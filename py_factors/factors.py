@@ -12,7 +12,7 @@ class Factors:
         return mainList
 
 
-    def factors(self, number, ordered=True):
+    def factors(self, number, ordered=False):
         # if ordered output
         if ordered:
             otherFactors=[]  #numbers that represent number/factor
@@ -41,7 +41,7 @@ class Factors:
             return self.mathFactors
 
 
-    def square_factors(self, number, ordered=True):
+    def square_factors(self, number, ordered=False):
         # if ordered output
         if ordered:
             otherFactors=[]
@@ -87,7 +87,7 @@ class Factors:
                             self.squareFactors.append(number//num)
             return self.squareFactors
 
-    def even_factors(self, number,ordered=True):
+    def even_factors(self, number,ordered=False):
         #if number is odd
         if number%2!=0:
             return self.evenFactors

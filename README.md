@@ -4,14 +4,14 @@ A python package that gives the mathematical factors of a number fast.
 ## Example
 A quick example of methods you can access. 
 
-Each of the functions below have additional argument `ordered` which can take value of `True` or `False`. `True` means give an ordered output while `False` means otherwise. By default it is `True`
+Each of the functions below have additional argument `ordered` which can take value of `True` or `False`. `True` means give an ordered output while `False` means otherwise. By default it is `False`
 
 ``` 
    
     from py_factors import factors, square_factors, even_factors, odd_factors
 
     # factors of 200
-    factor200= factors(200, ordered=False)
+    factor200= factors(200)
 
     output: [1, 200, 2, 100, 4, 50, 5, 40, 8, 25, 10, 20]
    
