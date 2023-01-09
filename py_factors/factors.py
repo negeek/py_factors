@@ -5,6 +5,12 @@ class Factors:
         self.oddFactors=[]
         self.evenFactors=[]
 
+    def __update_factors(self, otherFactorList, mainList):
+        while otherFactorList!=[]:
+                mainList.append(otherFactorList.pop())
+        return mainList
+
+
     def factors(self, number, ordered=True):
         # if ordered output
         if ordered:
@@ -81,6 +87,108 @@ class Factors:
                         if number//num != self.squareFactors[-1] and (number//num)**0.5==int_root:
                             self.squareFactors.append(number//num)
             return self.squareFactors
+    def even_factors(self, number,ordered=True):
+        #if number is odd
+        if number%2!=0:
+            return self.evenFactors
+        # if ordered output
+        if ordered:
+            otherFactors=[]
+            for num in range(1, int(number**0.5)+1):
+                if number %num==0:
+                    #if it is even
+                    if num%2==0:
+                        self.evenFactors.append(num)
+ 
+                        #check if the other factor is even
+                        if number//num != self.evenFactors[-1] and (number//num)%2==0:
+                            otherFactors.append(number//num)
+                    #check if other factor is even
+                    else:
+                        try:
+                            if number//num != self.evenFactors[-1] and (number//num)%2==0:
+                                otherFactors.append(number//num)
+                        except IndexError:
+                            otherFactors.append(number//num)
+            self.evenFactors=self.__update_factors(otherFactors, self.evenFactors)
+            return self.evenFactors
+
+        # if unordered output
+        else:
+            for num in range(1, int(number**0.5)+1):
+                if number %num==0:
+                    #if it is even
+                    if num%2==0:
+                        self.evenFactors.append(num)
+ 
+                        #check if the other factor is even
+                        if number//num != self.evenFactors[-1] and (number//num)%2==0:
+                            self.evenFactors.append(number//num)
+                    #check if other factor is even
+                    else:
+                        try:
+                            if number//num != self.evenFactors[-1] and (number//num)%2==0:
+                                self.evenFactors.append(number//num)
+                        except IndexError:
+                            self.evenFactors.append(number//num)
+            return self.evenFactors
+
+    def odd_factors(self, number, ordered=True):
+        # if ordered output
+        if ordered:
+            otherFactors=[]
+            for num in range(1, int(number**0.5)+1):
+                if number %num==0:
+                    #if it is even
+                    if num%2!=0:
+                        self.oddFactors.append(num)
+ 
+                        #check if the other factor is even
+                        if number//num != self.oddFactors[-1] and (number//num)%2!=0:
+                            otherFactors.append(number//num)
+                    #check if other factor is even
+                    else:
+                        try:
+                            if number//num != self.oddFactors[-1] and (number//num)%2!=0:
+                                otherFactors.append(number//num)
+                        except IndexError:
+                            otherFactors.append(number//num)
+            self.evenFactors=self.__update_factors(otherFactors, self.oddFactors)
+            return self.evenFactors
+
+        # if unordered output
+        else:
+            for num in range(1, int(number**0.5)+1):
+                if number %num==0:
+                    #if it is even
+                    if num%2!=0:
+                        self.oddFactors.append(num)
+ 
+                        #check if the other factor is even
+                        if number//num != self.oddFactors[-1] and (number//num)%2==0:
+                            self.oddFactors.append(number//num)
+                    #check if other factor is even
+                    else:
+                        try:
+                            if number//num != self.oddFactors[-1] and (number//num)%2==0:
+                                self.oddFactors.append(number//num)
+                        except IndexError:
+                            self.oddFactors.append(number//num)
+            return self.oddFactors
+
+
+
+
+s=Factors()
+print(s.factors(10000, ordered=True))
+                    
+
+
+
+
+
+
+    
 
 
 
