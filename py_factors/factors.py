@@ -5,7 +5,8 @@ class Factors:
         self.oddFactors=[]
         self.evenFactors=[]
 
-    def __update_factors(self, otherFactorList, mainList):
+    def __order_factors(self, otherFactorList, mainList):
+        ''' sorts the two lists so that'''
         while otherFactorList!=[]:
                 mainList.append(otherFactorList.pop())
         return mainList
@@ -24,9 +25,8 @@ class Factors:
                         else:
                             break
 
-            # update factors list
-            while otherFactors!=[]:
-                self.mathFactors.append(otherFactors.pop())
+            # order the factors
+            self.mathFactors=self.__order_factors(otherFactors, self.mathFactors)
             return self.mathFactors 
         
         # if unordered output
@@ -62,9 +62,8 @@ class Factors:
                         if number//num != self.squareFactors[-1] and (number//num)**0.5==int_root:
                             otherFactors.append(number//num)
                             
-            # update square factors list
-            while otherFactors!=[]:
-                self.squareFactors.append(otherFactors.pop())
+            #  order the factors
+            self.squareFactors=self.__order_factors(otherFactors, self.squareFactors)
             return self.squareFactors
 
         # if unorderd output
@@ -87,10 +86,12 @@ class Factors:
                         if number//num != self.squareFactors[-1] and (number//num)**0.5==int_root:
                             self.squareFactors.append(number//num)
             return self.squareFactors
+
     def even_factors(self, number,ordered=True):
         #if number is odd
         if number%2!=0:
             return self.evenFactors
+
         # if ordered output
         if ordered:
             otherFactors=[]
@@ -103,6 +104,7 @@ class Factors:
                         #check if the other factor is even
                         if number//num != self.evenFactors[-1] and (number//num)%2==0:
                             otherFactors.append(number//num)
+
                     #check if other factor is even
                     else:
                         try:
@@ -110,7 +112,9 @@ class Factors:
                                 otherFactors.append(number//num)
                         except IndexError:
                             otherFactors.append(number//num)
-            self.evenFactors=self.__update_factors(otherFactors, self.evenFactors)
+
+            # order the factors
+            self.evenFactors=self.__order_factors(otherFactors, self.evenFactors)
             return self.evenFactors
 
         # if unordered output
@@ -153,8 +157,10 @@ class Factors:
                                 otherFactors.append(number//num)
                         except IndexError:
                             otherFactors.append(number//num)
-            self.evenFactors=self.__update_factors(otherFactors, self.oddFactors)
-            return self.evenFactors
+
+            # order the factors
+            self.oddFactors=self.__order_factors(otherFactors, self.oddFactors)
+            return self.oddFactors
 
         # if unordered output
         else:
@@ -177,10 +183,6 @@ class Factors:
             return self.oddFactors
 
 
-
-
-s=Factors()
-print(s.factors(10000, ordered=True))
                     
 
 
