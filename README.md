@@ -4,7 +4,7 @@ A python package that gives the mathematical factors of a number fast.
 ## Example
 A quick example of methods you can access. 
 
-Each of the functions below have additional ard=gument `ordered` which can take value of `True` or `False`. `True` means give an ordered output while `False` means otherwise. By default it is `True`
+Each of the functions below have additional argument `ordered` which can take value of `True` or `False`. `True` means give an ordered output while `False` means otherwise. By default it is `True`
 
 ``` 
    
@@ -27,6 +27,6 @@ Each of the functions below have additional ard=gument `ordered` which can take 
 ```
 
 # Note
-TIf you want result in faster time set `ordered=False` in the functions.
+ setting `ordered=False` in the functions gives result faster than when `ordered=True`.
 
 
