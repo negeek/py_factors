@@ -137,7 +137,7 @@ class Factors:
                             self.evenFactors.append(number//num)
             return self.evenFactors
 
-    def odd_factors(self, number, ordered=True):
+    def odd_factors(self, number, ordered=False):
         # if ordered output
         if ordered:
             otherFactors=[]
