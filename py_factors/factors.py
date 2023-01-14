@@ -12,7 +12,7 @@ class Factors:
         return mainList
 
 
-    def factors(self, number, ordered=False):
+    def math_factors(self, number, ordered=False):
         # if ordered output
         if ordered:
             otherFactors=[]  #numbers that represent number/factor
@@ -143,20 +143,19 @@ class Factors:
             otherFactors=[]
             for num in range(1, int(number**0.5)+1):
                 if number %num==0:
-                    #if it is even
+                    #if it is odd
                     if num%2!=0:
                         self.oddFactors.append(num)
- 
-                        #check if the other factor is even
+
+                        #check if the other factor is odd
                         if number//num != self.oddFactors[-1] and (number//num)%2!=0:
                             otherFactors.append(number//num)
-                    #check if other factor is even
-                    else:
-                        try:
-                            if number//num != self.oddFactors[-1] and (number//num)%2!=0:
-                                otherFactors.append(number//num)
-                        except IndexError:
+
+                    #check if other factor is odd
+                    else: 
+                        if number//num != self.oddFactors[-1] and (number//num)%2!=0:
                             otherFactors.append(number//num)
+                        
 
             # order the factors
             self.oddFactors=self.__order_factors(otherFactors, self.oddFactors)
@@ -166,20 +165,18 @@ class Factors:
         else:
             for num in range(1, int(number**0.5)+1):
                 if number %num==0:
-                    #if it is even
+                    #if it is odd
                     if num%2!=0:
                         self.oddFactors.append(num)
  
                         #check if the other factor is even
-                        if number//num != self.oddFactors[-1] and (number//num)%2==0:
+                        if number//num != self.oddFactors[-1] and (number//num)%2!=0:
                             self.oddFactors.append(number//num)
                     #check if other factor is even
                     else:
-                        try:
-                            if number//num != self.oddFactors[-1] and (number//num)%2==0:
-                                self.oddFactors.append(number//num)
-                        except IndexError:
+                        if number//num != self.oddFactors[-1] and (number//num)%2!=0:
                             self.oddFactors.append(number//num)
+                      
             return self.oddFactors
     
     def prime_factors(self,number):
