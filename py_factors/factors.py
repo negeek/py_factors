@@ -181,6 +181,10 @@ class Factors:
                         except IndexError:
                             self.oddFactors.append(number//num)
             return self.oddFactors
+    
+    def prime_factors(self,number):
+        #next function
+        pass
 
 
                     
