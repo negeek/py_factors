@@ -1,6 +1,9 @@
 # py_factors
 A python package that gives the mathematical factors of a number fast.
 
+## Installation
+`python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps py_factors`
+
 ## Example
 A quick example of methods you can access. 
 

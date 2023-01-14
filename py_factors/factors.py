@@ -179,9 +179,9 @@ class Factors:
                       
             return self.oddFactors
     
-    def prime_factors(self,number):
-        #next function
-        pass
+    # def prime_factors(self,number):
+    #     #next function
+    #     pass
 
 
                     
