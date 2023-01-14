@@ -17,11 +17,11 @@ Each of the functions below have additional argument `ordered` which can take va
     factor_init= Factors()
 
     # factors of 200
-    factor200= factor_init.math_factors(200)
+    fact200= factor_init.math_factors(200)
     output: [1, 200, 2, 100, 4, 50, 5, 40, 8, 25, 10, 20]
    
     #square factors of 200 i.e factors of 200 that are perfect squares.
-    per_fact200= factor_init.square_factor(200)
+    perf_fact200= factor_init.square_factor(200)
     output: [1, 100, 4, 25]
 
     #even factors of 200
@@ -29,7 +29,7 @@ Each of the functions below have additional argument `ordered` which can take va
     output: [200, 2, 100, 4, 50, 40, 8, 10, 20]
 
     #odd factors of 200
-    odd_fact= factor_init.odd_factors(200)
+    odd_fact200 = factor_init.odd_factors(200)
     output: [1, 5, 25]
 
 ```
