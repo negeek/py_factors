@@ -4,7 +4,7 @@ test.py
 tests
 py_factors/*/*.pyc
 
-py_factors/__pycache__/*.pyc
+/py_factors/__pycache__/*.pyc
 
 /site/
 /htmlcov/
@@ -17,3 +17,4 @@ MANIFEST
 coverage.*
 
 *.pyc
+*.prof

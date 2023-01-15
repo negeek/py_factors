@@ -6,13 +6,27 @@ class Factors:
         self.evenFactors=[]
 
     def __order_factors(self, otherFactorList, mainList):
-        ''' sorts the two lists so that'''
+        ''' sorts the two lists'''
         while otherFactorList!=[]:
                 mainList.append(otherFactorList.pop())
         return mainList
+    
+    def __check_number(self,number):
+        try:
+            if int(number) != number:
+                raise Exception("Argument to function should be integer")
+        except:
+            raise Exception("Argument to function should be integer")
+
+    def __check_ordered(self,arg):
+        if arg != True and arg!=False:
+            raise Exception("ordered only takes True or False")
 
 
     def math_factors(self, number, ordered=False):
+        self.__check_number(number)
+        self.__check_ordered(ordered)
+        
         # if ordered output
         if ordered:
             otherFactors=[]  #numbers that represent number/factor
@@ -42,6 +56,8 @@ class Factors:
 
 
     def square_factors(self, number, ordered=False):
+        self.__check_number(number)
+        self.__check_ordered(ordered)
         # if ordered output
         if ordered:
             otherFactors=[]
@@ -88,6 +104,8 @@ class Factors:
             return self.squareFactors
 
     def even_factors(self, number,ordered=False):
+        self.__check_number(number)
+        self.__check_ordered(ordered)
         #if number is odd
         if number%2!=0:
             return self.evenFactors
@@ -138,6 +156,8 @@ class Factors:
             return self.evenFactors
 
     def odd_factors(self, number, ordered=False):
+        self.__check_number(number)
+        self.__check_ordered(ordered)
         # if ordered output
         if ordered:
             otherFactors=[]
@@ -182,6 +202,7 @@ class Factors:
     # def prime_factors(self,number):
     #     #next function
     #     pass
+
 
 
                     
