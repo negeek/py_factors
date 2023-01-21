@@ -199,10 +199,27 @@ class Factors:
                       
             return self.oddFactors
     
-    # def prime_factors(self,number):
-    #     #next function
-    #     pass
+    def prime_factors(self, number, ordered=False):
+        factors=self.math_factors(number)
+        prime_factor_space=factors[2:]
+        # prime factor of itself if factors are 2
+        if len(factors)==2:
+            return factors[-1]
+        
+        if len(prime_factor_space)==2:
+            return prime_factor_space
+        
 
+
+
+
+            
+                
+
+
+
+
+        
 
 
                     
