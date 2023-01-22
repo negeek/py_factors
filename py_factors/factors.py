@@ -209,21 +209,35 @@ class Factors:
             return factors[-1]
 
         num=prime_factor_space[0]
-        max_num=prime_factor_space[1]
-        while num < int(max_num**0.5)+1:
-                for j in range(1,len(prime_factor_space)):
-                    if num!=prime_factor_space[j]:
-                        if prime_factor_space[j]%num == 0:
-                            prime_factor_space[j]=0
+        memory={}
+        if num>2:
+            next_num=[num+2]
+        else:
+            next_num=[num+1]
+        while next_num!=[]:
+            for j in range(1, len(prime_factor_space)):
+                if num!=prime_factor_space[j]:
+                    if prime_factor_space[j]%num==0:
+                        prime_factor_space[j]=0
+                    else:
+                        try:
+                            if memory[prime_factor_space[j]]:
+                                pass
+                        except:
+                            memory[prime_factor_space[j]]=1
+                            next_num.append(prime_factor_space[j])
+            num=next_num.pop()
+
         for i in prime_factor_space:
             if i>0:
                 primes.append(i)
-        return primes
+        return primes                  
+
+
+       
         
 
 
-        
-        
 
 
 
