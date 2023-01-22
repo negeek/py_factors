@@ -3,11 +3,11 @@ from setuptools import setup, find_packages
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.0.2'
+VERSION = '1.0.0'
 PACKAGE_NAME = 'py_factors'
 AUTHOR = 'negeek'
-AUTHOR_EMAIL = 'danieladebowale@gmail.com'
-URL = 'https://github.com/you/your_package'
+AUTHOR_EMAIL = 'negeek5ive@gmail.com'
+URL = 'https://github.com/negeek/py_factors'
 
 LICENSE = 'MIT License'
 DESCRIPTION = 'python package that gives mathematical factors of a number'
