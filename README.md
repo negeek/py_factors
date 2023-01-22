@@ -7,7 +7,7 @@ A python package that gives the mathematical factors of a number fast.
 ## Example
 A quick example of methods you can access. 
 
-Each of the functions below have additional argument `ordered` which can take value of `True` or `False`. `True` means give an ordered output while `False` means otherwise. By default it is `False`
+Each of the functions below have additional argument `ordered` except `prime_factors`. `ordered` can take value of `True` or `False`. `True` means give an ordered output while `False` means otherwise. By default it is `False`
 
 ``` 
    
@@ -32,9 +32,15 @@ Each of the functions below have additional argument `ordered` which can take va
     odd_fact200 = factor_init.odd_factors(200)
     output: [1, 5, 25]
 
+    # prime factors of 200 i.e factors of 200 that are prime numbers
+    prime_fact200 = factor_init.prime_factors(200)
+    output: [2, 5]   
+
 ```
 
 # Note
- setting `ordered=False` in the functions gives result faster than when `ordered=True`.
+`prime_factors` doesn't have additional argument `ordered` and it also gives result in ordered form.
+ 
+Setting `ordered=False` in the functions gives result faster than when `ordered=True`.
 
 

@@ -215,7 +215,7 @@ class Factors:
         else:
             next_num=[num+1]
             memory[num+1]=1
-            
+
         # check if numbers in prime_factor_space are prime by dividing them against each other
         while True:
             for i in range(1, len(prime_factor_space)):
@@ -238,9 +238,7 @@ class Factors:
         primeFactors = list(filter(lambda x: (x >0), prime_factor_space))
         return primeFactors                 
 
-
-
-        
+      
 
 
 
