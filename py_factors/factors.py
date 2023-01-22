@@ -200,21 +200,35 @@ class Factors:
             return self.oddFactors
     
     def prime_factors(self, number, ordered=False):
+        primes=[]
         factors=self.math_factors(number)
         prime_factor_space=factors[2:]
+
         # prime factor of itself if factors are 2
-        if len(factors)==2:
+        if len(factors)<3 or len(prime_factor_space)<2:
             return factors[-1]
+
+        num=prime_factor_space[0]
+        max_num=prime_factor_space[1]
+        while num < int(max_num**0.5)+1:
+                for j in range(1,len(prime_factor_space)):
+                    if num!=prime_factor_space[j]:
+                        if prime_factor_space[j]%num == 0:
+                            prime_factor_space[j]=0
+        for i in prime_factor_space:
+            if i>0:
+                primes.append(i)
+        return primes
         
-        if len(prime_factor_space)==2:
-            return prime_factor_space
+
+
+        
         
 
 
 
 
-            
-                
+               
 
 
 
