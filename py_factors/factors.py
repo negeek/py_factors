@@ -200,7 +200,6 @@ class Factors:
             return self.oddFactors
     
     def prime_factors(self, number, ordered=False):
-        primes=[]
         factors=self.math_factors(number)
         prime_factor_space=factors[2:]
 
@@ -212,29 +211,35 @@ class Factors:
         memory={}
         if num>2:
             next_num=[num+2]
+            memory[num+2]=1
         else:
             next_num=[num+1]
-        while next_num!=[]:
-            for j in range(1, len(prime_factor_space)):
-                if num!=prime_factor_space[j]:
-                    if prime_factor_space[j]%num==0:
-                        prime_factor_space[j]=0
+            memory[num+1]=1
+            
+        # check if numbers in prime_factor_space are prime by dividing them against each other
+        while True:
+            for i in range(1, len(prime_factor_space)):
+                if num!=prime_factor_space[i]:
+                    if prime_factor_space[i]%num==0:
+                        prime_factor_space[i]=0
                     else:
                         try:
-                            if memory[prime_factor_space[j]]:
+                            if memory[prime_factor_space[i]]:
                                 pass
                         except:
-                            memory[prime_factor_space[j]]=1
-                            next_num.append(prime_factor_space[j])
-            num=next_num.pop()
+                            memory[prime_factor_space[i]]=1
+                            next_num.append(prime_factor_space[i])
+            
+            try:
+                num=next_num.pop()
+            except:
+                break
 
-        for i in prime_factor_space:
-            if i>0:
-                primes.append(i)
-        return primes                  
+        primeFactors = list(filter(lambda x: (x >0), prime_factor_space))
+        return primeFactors                 
 
 
-       
+
         
 
 
