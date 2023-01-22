@@ -2,7 +2,7 @@
 A python package that gives the mathematical factors of a number fast.
 
 ## Installation
-`python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps py_factors`
+`pip install -i https://test.pypi.org/simple/ py-factors`
 
 ## Example
 A quick example of methods you can access. 

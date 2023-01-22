@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 HERE = pathlib.Path(__file__).parent
 
-VERSION = '0.0.1'
+VERSION = '0.0.2'
 PACKAGE_NAME = 'py_factors'
 AUTHOR = 'negeek'
 AUTHOR_EMAIL = 'danieladebowale@gmail.com'
