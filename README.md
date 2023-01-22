@@ -36,7 +36,7 @@ Each of the functions below have additional argument `ordered` except `prime_fac
     prime_fact200 = factor_init.prime_factors(200)
     output: [2, 5]   
 
-``
+```
 
 # Note
 `prime_factors` doesn't have additional argument `ordered` and it also gives result in ordered form.
