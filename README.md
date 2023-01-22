@@ -9,7 +9,7 @@ A quick example of methods you can access.
 
 Each of the functions below have additional argument `ordered` except `prime_factors`. `ordered` can take value of `True` or `False`. `True` means give an ordered output while `False` means otherwise. By default it is `False`
 
-``` 
+``` py
    
     from py_factors import Factors
 
@@ -36,7 +36,7 @@ Each of the functions below have additional argument `ordered` except `prime_fac
     prime_fact200 = factor_init.prime_factors(200)
     output: [2, 5]   
 
-```
+``
 
 # Note
 `prime_factors` doesn't have additional argument `ordered` and it also gives result in ordered form.
